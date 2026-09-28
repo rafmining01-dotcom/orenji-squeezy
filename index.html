@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orenji Squeezy — Sekali Coba Langsung Suka</title>
+<meta name="description" content="Orenji Squeezy — minuman jeruk segar. Lihat menu dan pesan melalui Instagram.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Orenji Squeezy">
+    <img src="assets/logo.jpeg" alt="Logo Orenji">
+    <span>ORENJI <small>SQUEEZY</small></span>
+  </a>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">Tentang</a>
+    <a href="#location">Lokasi</a>
+    <button class="nav-order" onclick="openCart()">Keranjang <b id="cartCount">0</b></button>
+    <button class="admin-link" onclick="openAdmin()">Admin</button>
+  </nav>
+</header>
+
+<main id="customer">
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">🍊 MINUMAN JERUK SEGAR</span>
+    <h1>Sekali Coba,<br><em>Langsung Suka.</em></h1>
+    <p>Orenji Squeezy menghadirkan minuman jeruk dengan rasa segar dan pilihan menu yang cocok untuk menemani hari kamu.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#menu">Lihat Menu</a>
+      <a class="btn ghost" href="#location">Lihat Lokasi</a>
+    </div>
+    <div class="open-info"><span class="dot"></span> Buka setiap hari · 11.00–21.00 WIB</div>
+  </div>
+  <div class="hero-visual">
+    <div class="blob"></div>
+    <img src="assets/product.jpeg" alt="Minuman Orenji" class="hero-product">
+    <div class="float-card card-one">🍊 <b>Fresh</b><span>Segar setiap tegukan</span></div>
+    <div class="float-card card-two">✨ <b>Orenji</b><span>Sekali coba langsung suka</span></div>
+  </div>
+</section>
+
+<section id="menu" class="section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">OUR MENU</span>
+      <h2>Pilih favoritmu.</h2>
+    </div>
+    <p>Harga mengikuti menu Orenji yang kamu berikan.</p>
+  </div>
+  <div class="menu-grid" id="productGrid"></div>
+
+  <div class="add-on">
+    <div><span class="add-icon">+</span><div><strong>Tambahan Yakult</strong><small>Bisa ditambahkan ke minuman</small></div></div>
+    <b>Rp3.000</b>
+  </div>
+
+  <img class="menu-reference" src="assets/menu.jpeg" alt="Daftar menu dan harga Orenji">
+</section>
+
+<section id="about" class="section split">
+  <div class="photo-frame"><img src="assets/product.jpeg" alt="Produk Orenji Squeezy"></div>
+  <div>
+    <span class="eyebrow">TENTANG ORENJI</span>
+    <h2>Jeruk segar,<br>dibuat untuk kamu.</h2>
+    <p>Orenji Squeezy adalah brand minuman jeruk dengan tampilan cerah dan rasa yang menyegarkan. Website ini dibuat sebagai etalase digital agar pelanggan lebih mudah melihat menu, harga, dan menemukan lokasi Orenji.</p>
+    <div class="mini-features">
+      <div><b>🍊</b><span>Menu jeruk beragam</span></div>
+      <div><b>📱</b><span>Pesan lewat Instagram</span></div>
+      <div><b>📍</b><span>Lokasi mudah ditemukan</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="section location-section">
+  <div class="location-card">
+    <div>
+      <span class="eyebrow">COME & VISIT</span>
+      <h2>Mau langsung datang?</h2>
+      <p>Jam operasional <b>11.00–21.00 WIB</b>. Buka Google Maps untuk melihat lokasi Orenji.</p>
+      <a class="btn primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/5fFCFMVMfJcjX98D8?g_st=ic">📍 Lihat Lokasi Orenji</a>
+    </div>
+    <div class="map-art"><span>📍</span><b>ORENJI</b><small>Google Maps</small></div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div>
+    <span class="eyebrow">READY?</span>
+    <h2>Sudah tahu mau pilih yang mana?</h2>
+    <p>Masukkan menu ke keranjang, lalu lanjut ke Instagram Orenji untuk mengirim pesanan.</p>
+  </div>
+  <button class="btn light" onclick="openCart()">Pesan Sekarang ↗</button>
+</section>
+</main>
+
+<section id="admin" class="admin-page">
+  <div class="admin-top">
+    <div><span class="eyebrow">ADMIN PANEL</span><h1>Kelola Orenji.</h1><p>Perubahan produk tersimpan di browser ini.</p></div>
+    <button class="btn ghost" onclick="closeAdmin()">← Kembali</button>
+  </div>
+
+  <div class="admin-grid">
+    <div class="admin-panel">
+      <h2>Tambah produk</h2>
+      <label>Nama produk<input id="pName" class="input" placeholder="Contoh: Orenji's Local"></label>
+      <div class="two">
+        <label>Harga S<input id="pS" class="input" type="number" placeholder="6000"></label>
+        <label>Harga L<input id="pL" class="input" type="number" placeholder="9000"></label>
+      </div>
+      <div class="two">
+        <label>Harga S + topping<input id="pST" class="input" type="number" placeholder="10000"></label>
+        <label>Harga L + topping<input id="pLT" class="input" type="number" placeholder="14000"></label>
+      </div>
+      <label>Foto produk<input id="pImage" class="input" type="file" accept="image/*"></label>
+      <button class="btn primary full" onclick="addProduct()">+ Tambah Produk</button>
+    </div>
+
+    <div class="admin-panel">
+      <h2>Produk aktif</h2>
+      <div id="adminList"></div>
+    </div>
+  </div>
+
+  <div class="admin-panel orders">
+    <h2>Pesanan</h2>
+    <div class="order-note">
+      <b>Pesanan pelanggan masuk lewat Instagram.</b>
+      <p>Karena alur pemesanan website diarahkan ke DM Instagram, pesanan Instagram tidak otomatis masuk ke dashboard website. Tombol pesan menyalin ringkasan keranjang agar mudah ditempel ke DM.</p>
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/orenjisqueeze?stkn=MTR0NGJkZTJibDJtZw==">Buka Instagram Orenji ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="assets/logo.jpeg" alt=""> <b>ORENJI SQUEEZY</b></div>
+  <p>Sekali Coba Langsung Suka.</p>
+  <div class="socials">
+    <a target="_blank" rel="noopener" href="https://www.instagram.com/orenjisqueeze?stkn=MTR0NGJkZTJibDJtZw==">Instagram</a>
+    <a target="_blank" rel="noopener" href="https://www.tiktok.com/@orenjisqueeze?lang=id-ID&is_from_webapp=1&sender_device=mobile&sender_web_id=7690614753693828626">TikTok</a>
+  </div>
+  <small>11.00–21.00 WIB</small>
+</footer>
+
+<div class="modal" id="cartModal" onclick="if(event.target===this)closeCart()">
+  <div class="sheet">
+    <div class="sheet-head"><div><span class="eyebrow">YOUR ORDER</span><h2>Keranjang</h2></div><button class="x" onclick="closeCart()">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><b id="cartTotal">Rp0</b></div>
+    <button class="btn primary full" onclick="sendToInstagram()">Pesan via Instagram ↗</button>
+    <p class="tiny">Ringkasan pesanan akan disalin, lalu Instagram Orenji dibuka. Tinggal paste ke DM.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
